@@ -1,0 +1,10 @@
+void config_HPS_GPIO1()
+{
+volatile int * HPS_GPIO1_ptr = (int *)HPS_GPIO1_BASE; // GPIO1 base address
+*(HPS_GPIO1_ptr + 0x1) =
+0x01000000; // write to the data direction register to set
+// bit 24 (LEDG) to be an output
+// Other possible actions include setting up GPIO1 to use the KEY, including
+// setting the debounce option and causing the KEY to generate an interrupt.
+// We do not use the KEY in this example.
+}
